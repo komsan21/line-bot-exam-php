@@ -1,5 +1,7 @@
 <?php
-
+if (!$_GET['uid']) {
+  die("Token is missing");
+}
 
 
 require "vendor/autoload.php";
@@ -8,7 +10,7 @@ $access_token = 'Vxjt4m86PzjD+o/TMkTVFOi77LVDjEEJp9X6hCHnMDPM8Fx8kplicC5n8dxekV9
 
 $channelSecret = '94bd50a658cfc05dae429bcc2bec01c9';
 
-$pushID = 'Ue02282be45e608fe97e1782252c213e4';
+$pushID = $_GET['uid']; //'Ue02282be45e608fe97e1782252c213e4';
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
