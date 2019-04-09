@@ -3,7 +3,7 @@
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
-$access_token = 'GeSG2LjSoGPo3CwPX+lbCoz2/0HScXojW1L9gnCyljAjqdoSNSR6DRARPxGgQ6heeGu8AacU2dZQImE+xfLIpkqeQkEHf6sa2P5fqScFtp1jH6aTvQ5tB4y6HVetFLIBVNStNo87CAODJIw3FLGRGwdB04t89/1O/w1cDnyilFU=';
+$access_token = 'Vxjt4m86PzjD+o/TMkTVFOi77LVDjEEJp9X6hCHnMDPM8Fx8kplicC5n8dxekV9SeGu8AacU2dZQImE+xfLIpkqeQkEHf6sa2P5fqScFtp2NeKC4upJvsLZEOfqQZiUy/PCR4bFZh6ls3MzT6LSkxgdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -48,4 +48,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "OK!";
