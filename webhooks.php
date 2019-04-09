@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = 'https://mybot-line.herokuapp.com/botpush.php?token='.$event['source']['userId'];
+			$text = 'https://mybot-line.herokuapp.com/botpush.php?uid='.$event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
