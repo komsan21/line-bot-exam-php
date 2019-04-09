@@ -17,7 +17,7 @@ if ($_POST['name']) {
   $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
   $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
-  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello, ' .(($name) ? 'Guest':$name));
+  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello, ' .(($name) ? $name:'Guest'));
   $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
   echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
