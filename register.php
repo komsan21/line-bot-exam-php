@@ -4,6 +4,7 @@ if (!$_GET['uid']) {
 }
 
 if ($_POST['name']) {
+  $name = $_POST['name'];
 
   require "vendor/autoload.php";
 
@@ -16,11 +17,11 @@ if ($_POST['name']) {
   $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
   $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
-  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello world');
+  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello, ' .(($name) ? 'Guest':$name));
   $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
   echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-  $name = $_POST['name'];
+  
 }
 ?>
 <form method="post" action="register.php?uid=<?php echo $_GET['uid']; ?>">
